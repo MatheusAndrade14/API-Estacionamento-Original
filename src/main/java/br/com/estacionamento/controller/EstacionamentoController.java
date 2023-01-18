@@ -34,11 +34,10 @@ public class EstacionamentoController {
 	public ResponseEntity<Map<String,String>> salvarRegistroEstacionamento(
 			@RequestBody @Valid RegistroEstacionamento registroEstacionamento) {
 
-		String codigoReserva = "";
 		final Map<String, String> retorno = new HashMap<>();
 
 		try {
-			codigoReserva = estacionamentoService.salvarRegistroEstacionamento(registroEstacionamento);
+			String codigoReserva = estacionamentoService.salvarRegistroEstacionamento(registroEstacionamento);
 
 			retorno.put("codigo_reserva", codigoReserva);
 
